@@ -22,6 +22,7 @@ include <direct.h>
 #include <windows.h>
 #include <sys/stat.h>
 #include <fstream>
+#include <cstdlib>
 
 #endif
 
@@ -30,9 +31,9 @@ include <direct.h>
 using namespace std;
 
 
-void setupDirectories();
+int setupDirectories();
 
-void setupFiles();
+int setupFiles();
 
 string get_current_dir() {
     char buff[FILENAME_MAX]; //create string buffer to hold path
@@ -78,6 +79,9 @@ int main() {
     else if(userChoice == "Update Account Balances"){
         cout << "User chose to update account balances\n";
     }
+    else if (userChoice == "Add an Account"){
+        addAccount();
+    }
 
     std::cout << "User chose " + userChoice;
     return 0;
@@ -94,21 +98,63 @@ string displayList(vector<string> listToDisplay) {
     return listToDisplay.at(userChoice - 1);
 }
 
-void setupDirectories(){
+int setupDirectories(){
     _mkdir("C:\\Documents");
     _mkdir("C:\\Personal Finance");
     _mkdir(R"(C:\\Personal Finance\\Databases)");
     _mkdir(R"(C:\\Personal Finance\\Historical Documents)");
+    return 0;
 }
 
-void setupFiles(){
-    std::ofstream databaseFile;
+int setupFiles(){
+    cout << "Setting up directories" << endl;
+    fstream databaseFile;
     databaseFile.open(R"(C:\\Personal Finance\\Databases\\Databases.txt)");
-    databaseFile << "Account Nickname,Amount";
-    databaseFile.close();
+    if (!databaseFile.is_open()){
+        std::ofstream databaseFileCreate;
+        cout << "Creating new Database file." << endl;
+        databaseFileCreate.open(R"(C:\\Personal Finance\\Databases\\Databases.txt)");
+        databaseFileCreate << "Account Nickname,Amount\n";
+        databaseFileCreate.close();
+    }
+    else {
+        databaseFile.close();
+        cout << "Database file was found." << endl;
+    }
 
-    std::ofstream historicalFile;
-    historicalFile.open(R"(C:\\Personal Finance\\Historical Documents\\Historical Data.txt)");
-    historicalFile << "Date,Account Nickname,Amount";
-    historicalFile.close();
+    fstream historicalFile;
+    historicalFile.open(R"(C:\\Personal Finance\\Historical Documents\\Historical Data.txt)",ios::out | ios::app);
+    if (!historicalFile.is_open()){
+        std::ofstream historicalFileCreate;
+        cout << "Creating new Historical documents directory." << endl;
+        historicalFileCreate.open(R"(C:\\Personal Finance\\Databases\\Historical Documents.txt)");
+        historicalFileCreate << "Account Nickname,Amount\n";
+        historicalFileCreate.close();
+        cout << "Historical file has been created" << endl;
+        return 0;
+
+    }
+    else{
+        historicalFile.close();
+        cout << "Historical file was found." << endl;
+        return 0;
+    }
+
+}
+
+void addAccount(){
+    string accountName;
+    string accountBalance;
+    cout << "What is the name of the account?\n";
+    cin.ignore();
+    getline(cin,accountName);
+    cout<< "What is the current balance of the account?\n";
+
+    getline(cin,accountBalance);
+
+
+    std::ofstream databaseFile;
+    databaseFile.open(R"(C:\Personal Finance\Databases\Databases.txt)", ios::out | ios::app);
+    databaseFile << (accountName+","+accountBalance) <<endl;
+    databaseFile.close();
 }
