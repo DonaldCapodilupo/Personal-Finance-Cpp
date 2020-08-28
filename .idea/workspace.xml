@@ -20,7 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bba0912e-8be7-4666-b1b4-001d2f91c72c" name="Default Changelist" comment="Program now sets up two directories and two files that wil be used later to store data. Utilizing sqlite may be possible but outside of scope at this time.">
+    <list default="true" id="bba0912e-8be7-4666-b1b4-001d2f91c72c" name="Default Changelist" comment="The files are no properly created. If a file does not exist, a new one is created and a header is added. If the file already exists, users can add append information to it without issue.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/PersonalFinance.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/PersonalFinance.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/PersonalFinance.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/PersonalFinance.ilk" afterDir="false" />
@@ -56,11 +56,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -78,7 +73,8 @@
       <workItem from="1598098828210" duration="197000" />
       <workItem from="1598289319986" duration="305000" />
       <workItem from="1598289770648" duration="14429000" />
-      <workItem from="1598540247100" duration="4433000" />
+      <workItem from="1598540247100" duration="5900000" />
+      <workItem from="1598622759991" duration="4966000" />
     </task>
     <task id="LOCAL-00001" summary="List display working properly. All other functions need to be set up. Will most likely start with creating directories and databases.">
       <created>1598289843740</created>
@@ -94,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598467906862</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="The files are no properly created. If a file does not exist, a new one is created and a header is added. If the file already exists, users can add append information to it without issue.">
+      <created>1598555422508</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1598555422508</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,28 +118,33 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="List display working properly. All other functions need to be set up. Will most likely start with creating directories and databases." />
     <MESSAGE value="Program now sets up two directories and two files that wil be used later to store data. Utilizing sqlite may be possible but outside of scope at this time." />
-    <option name="LAST_COMMIT_MESSAGE" value="Program now sets up two directories and two files that wil be used later to store data. Utilizing sqlite may be possible but outside of scope at this time." />
+    <MESSAGE value="The files are no properly created. If a file does not exist, a new one is created and a header is added. If the file already exists, users can add append information to it without issue." />
+    <option name="LAST_COMMIT_MESSAGE" value="The files are no properly created. If a file does not exist, a new one is created and a header is added. If the file already exists, users can add append information to it without issue." />
   </component>
   <component name="WindowStateProjectService">
-    <state width="809" height="200" key="GridCell.Tab.0.bottom" timestamp="1598555279142">
+    <state width="1877" height="200" key="GridCell.Tab.0.bottom" timestamp="1598656812691">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1663" height="200" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1598648690111" />
+    <state width="1877" height="200" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598656812691" />
+    <state width="1877" height="200" key="GridCell.Tab.0.center" timestamp="1598656812691">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1663" height="200" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1598648690111" />
+    <state width="1877" height="200" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598656812691" />
+    <state width="1877" height="200" key="GridCell.Tab.0.left" timestamp="1598656812691">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1663" height="200" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1598648690096" />
+    <state width="1877" height="200" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598656812691" />
+    <state width="1877" height="200" key="GridCell.Tab.0.right" timestamp="1598656812691">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1663" height="200" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1598648690111" />
+    <state width="1877" height="200" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598656812691" />
+    <state x="20" y="194" key="Vcs.Push.Dialog.v2" timestamp="1598555435002">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state width="809" height="200" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1598555279142" />
-    <state width="809" height="200" key="GridCell.Tab.0.center" timestamp="1598555279142">
-      <screen x="0" y="0" width="1707" height="920" />
-    </state>
-    <state width="809" height="200" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1598555279142" />
-    <state width="809" height="200" key="GridCell.Tab.0.left" timestamp="1598555279142">
-      <screen x="0" y="0" width="1707" height="920" />
-    </state>
-    <state width="809" height="200" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1598555279142" />
-    <state width="809" height="200" key="GridCell.Tab.0.right" timestamp="1598555279142">
-      <screen x="0" y="0" width="1707" height="920" />
-    </state>
-    <state width="809" height="200" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1598555279142" />
-    <state x="20" y="194" key="Vcs.Push.Dialog.v2" timestamp="1598467909817">
-      <screen x="0" y="0" width="1707" height="920" />
-    </state>
-    <state x="20" y="194" key="Vcs.Push.Dialog.v2/0.0.1707.920@0.0.1707.920" timestamp="1598467909817" />
+    <state x="20" y="194" key="Vcs.Push.Dialog.v2/0.0.1707.920@0.0.1707.920" timestamp="1598555435002" />
   </component>
 </project>
