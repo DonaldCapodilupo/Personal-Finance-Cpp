@@ -147,23 +147,24 @@ int addAccount(){
 }
 
 int removeAccount(){
-    string line; // for reading in the file as a string
 
 
     // open the .csv file
-    ifstream fin(R"(C:\Personal Finance\Databases\Databases.csv)");
-
-    // while it still has lines
-    while(getline(fin, line)){
-        if (line == "Account Nickname,Amount"){  //Skip the header
+    string line;
+    vector<string> DataStore;
+    ifstream file(R"(C:\Personal Finance\Databases\Databases.csv)");
+    while( getline(file,line, ',') )
+    {
+        if (line == "Account Nickname"){
             continue;
         }
-        else{
-            cout << line.substr(line.find((0,',')-7))<< endl;
-        }// set curr to the current value
 
+        DataStore.push_back(line);
+        getline(file,line);
+    }
+    for(auto & i : DataStore)
+        cout << i << endl;
 
-    } //end while
 
     return 0;
 }
